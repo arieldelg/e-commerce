@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.product-detail {
+    height: calc(100% - 41px);
+}
+
+.overflow-checkout {
+    height: calc(100% - 200px);
+}
