@@ -7,7 +7,7 @@ import { dataContext } from "../Context";
 
 const Navbar = () => {
     const activeStyle = 'underline underline-offset-4';
-    const { add, setFilterProduct } = React.useContext(dataContext)
+    const { add, setFilterProduct, useLocalStorage, info, logOut } = React.useContext(dataContext)
     return (
         <nav className=" w-full bg-white text-black h-10 px-3 flex fixed top-0 left-0 z-10">
             <div className="flex flex-col items-start w-6/12 h-full">
@@ -30,10 +30,18 @@ const Navbar = () => {
 
             <div className="flex flex-col items-end w-6/12 h-full">
                 <ul className="flex items-center h-full gap-3 text-sm">
-                    <p className='text-xs text-gray-500'>arieldelgrande@hotmail.com</p>
-                    <NavLink to={'/my-orders'} className={({ isActive }) => isActive ? activeStyle : undefined }>My Orders</NavLink>
-                    <NavLink to={'/my-account'} className={({ isActive }) => isActive ? activeStyle : undefined }>My Account</NavLink>
-                    <NavLink to={'/sign-in'} className={({ isActive }) => isActive ? activeStyle : undefined }>Sign In</NavLink>
+                    {
+                        info &&
+                        <>
+                        <p className='text-xs text-gray-500'>arieldelgrande@hotmail.com</p>
+                        <NavLink to={'/my-orders'} className={({ isActive }) => isActive ? activeStyle : undefined }>My Orders</NavLink>
+                        <NavLink to={'/my-account'} className={({ isActive }) => isActive ? activeStyle : undefined }>My Account</NavLink>
+                        </>
+                    }
+                    {
+                        info ? <NavLink to={'/sign-in'} className={({ isActive }) => isActive ? activeStyle : undefined } onClick={() => logOut(false)}>Sign Out</NavLink> : <NavLink to={'/sign-in'} className={({ isActive }) => isActive ? activeStyle : undefined } onClick={() => useLocalStorage()}>Sign In</NavLink>
+                    }
+                    {/* <NavLink to={'/sign-in'} className={({ isActive }) => isActive ? activeStyle : undefined } onClick={() => useLocalStorage()}>Sign In</NavLink> */}
                     <NavLink to={'/my-orders/last'} className={'flex'} >
                         <ShoppingCartIcon className="w-6 h-6"/>
                         <p>{ add }</p>

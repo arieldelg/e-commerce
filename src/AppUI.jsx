@@ -11,7 +11,8 @@ import { MyOrders } from './Pages/MyOrders'
 import { MyAccount } from './Pages/MyAccount';
 import { NotFound } from './Pages/NotFound';
 import { dataContext } from "./Components/Context";
-
+import { ModalRegister } from "./Components/ModalRegister";
+import { NewAccount } from "./Components/ModalRegister/NewAccount";
 
 const AppRoutes = () => {
     const routes = useRoutes([
@@ -32,7 +33,7 @@ const AppRoutes = () => {
   }
 
 const AppUI = () => {
-    const { openCheckout} = React.useContext(dataContext)
+    const { openCheckout, newAccount} = React.useContext(dataContext)
 
     return(
         <>
@@ -44,6 +45,12 @@ const AppUI = () => {
                 <ModalCheckout>
                     <CheckoutMenu/>
                 </ModalCheckout>
+            }
+            {
+                newAccount &&
+                <ModalRegister>
+                    <NewAccount/> 
+                </ModalRegister>
             }
             </BrowserRouter>
             </Layout>

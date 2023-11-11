@@ -1,24 +1,25 @@
 import React from "react";
 import { useEffect } from "react";
+import { useLocalStorage } from "./useLocaleStorage";
 
 const dataContext = React.createContext()
 
 const DataProvider = ({ children }) => {
+    // localeStorage
+    const {itemAccount: info, saveAccount, itemInfo, logOut, setItemAccount, logIn} = useLocalStorage('LOG_IN', false)
+   //modificar la pantalla de mi account, osea que podamos editar nuestra cuenta //////////////////////////////////////////////////////////////////
     // PathName
     const pathname = window.location.pathname
     const searchTerm = '/'
     const makeSubstring = pathname.lastIndexOf(searchTerm) + 1
     const path = pathname.substring(makeSubstring)
-    console.log(pathname)
     // feth
     const [item, setitem] = React.useState([])
     useEffect(() => {
         fetch('http://localhost:3000/data')
             .then(response => response.json())
             .then(data => setitem(data))
-            console.log(item)
     },[])
-    console.log(item)
     // Product Card / add to cart // array con objetos
     const [add, setAdd] = React.useState(0)
     const [addProduct, setAddProduct] = React.useState([])
@@ -30,7 +31,6 @@ const DataProvider = ({ children }) => {
             setAddProduct([...addProduct, data])
             setAdd(add + 1)
             setOpenCheckout(true)
-            
         }
     }
     //Portal // Product Detail
@@ -93,6 +93,7 @@ const DataProvider = ({ children }) => {
     } else {
         search = item?.filter(element => element?.title.toLowerCase().includes(searchValue?.toLocaleLowerCase()))
     }
+    const [newAccount, setNewAccount] = React.useState(false)
     return (
         <dataContext.Provider value={{
             item,
@@ -115,7 +116,16 @@ const DataProvider = ({ children }) => {
             searchValue,
             search,
             filterProduct,
-            setFilterProduct
+            setFilterProduct,
+            useLocalStorage,
+            info,
+            saveAccount,
+            setNewAccount,
+            newAccount,
+            logOut,
+            itemInfo,
+            setItemAccount,
+            logIn
         }}>
             { children }
         </dataContext.Provider>
