@@ -8,3 +8,8 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 I USE MY OWN JASON SERVER TO MAKE THE API CALLS 
+
+proyect created with Vite, 
+github page: https://arieldelg.github.io/e-commerce/
+email: arieldelgrande@hotmail.com
+please leave me a message, to see full page
