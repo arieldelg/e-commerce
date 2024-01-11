@@ -27,7 +27,7 @@ const AppRoutes = () => {
         {path: '/e-commerce/my-orders/last' , element: <MyOrder/>},
         {path: '/e-commerce/my-orders/:id' , element: <MyOrder/>},
         {path: '/e-commerce/my-account' , element: <MyAccount/>},
-        // {path: '/e-commerce/*' , element: <NotFound/>},
+        {path: '/e-commerce/*' , element: <NotFound/>},
     ])
     return routes
   }
