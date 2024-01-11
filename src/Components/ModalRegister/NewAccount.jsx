@@ -31,7 +31,7 @@ const NewAccount = () => {
                 <label htmlFor="password" className="text-sm mb-1">Your password:</label>
                 <input type="text" id="password"  placeholder="Your password here:" className="w-80 h-10 px-3 rounded-md text-white" onChange={(event) => setPassword(event.target.value)} value={password}/>   
             </div>
-            <Link to={'/'}>
+            <Link to={'/e-commerce'}>
                 <button className="bg-black text-white w-80 h-10 mt-4 rounded-md text-2xl font-semibold hover:bg-white hover:text-black" onClick={() => createAccount()}>Create</button>
             </Link>
         </div>

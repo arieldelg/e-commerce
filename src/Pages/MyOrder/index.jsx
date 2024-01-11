@@ -22,7 +22,7 @@ const MyOrder = () => {
     return(
         <div>
             <div className="flex items-center justify-center w-full relative h-20">
-                <Link to={'/my-orders'} className="flex items-center">
+                <Link to={'/e-commerce/my-orders'} className="flex items-center">
                     <ChevronLeftIcon className={'text-white w-10 absolute left-0 cursor-pointer'}/>
                 </Link>
                 <h1 className='text-center text-4xl my-4 font-bold'>My {islast}</h1>

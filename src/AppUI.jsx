@@ -16,18 +16,18 @@ import { NewAccount } from "./Components/ModalRegister/NewAccount";
 
 const AppRoutes = () => {
     const routes = useRoutes([
-        {path: '/' , element: <Home/>},
-        {path: '/clothes' , element: <Home/>},
-        {path: '/electronics' , element: <Home/>},
-        {path: '/forniture' , element: <Home/>},
-        {path: '/jewerly' , element: <Home/>},
-        {path: '/sign-in' , element: <SignIn/>},
-        {path: '/my-order' , element: <MyOrder/>},
-        {path: '/my-orders' , element: <MyOrders/>},
-        {path: '/my-orders/last' , element: <MyOrder/>},
-        {path: '/my-orders/:id' , element: <MyOrder/>},
-        {path: '/my-account' , element: <MyAccount/>},
-        {path: '/*' , element: <NotFound/>},
+        {path: '/e-commerce' , element: <Home/>},
+        {path: '/e-commerce/clothes' , element: <Home/>},
+        {path: '/e-commerce/electronics' , element: <Home/>},
+        {path: '/e-commerce/forniture' , element: <Home/>},
+        {path: '/e-commerce/jewerly' , element: <Home/>},
+        {path: '/e-commerce/sign-in' , element: <SignIn/>},
+        {path: '/e-commerce/my-order' , element: <MyOrder/>},
+        {path: '/e-commerce/my-orders' , element: <MyOrders/>},
+        {path: '/e-commerce/my-orders/last' , element: <MyOrder/>},
+        {path: '/e-commerce/my-orders/:id' , element: <MyOrder/>},
+        {path: '/e-commerce/my-account' , element: <MyAccount/>},
+        // {path: '/e-commerce/*' , element: <NotFound/>},
     ])
     return routes
   }

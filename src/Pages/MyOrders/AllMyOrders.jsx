@@ -15,7 +15,7 @@ const AllMyOrders = ({ data }) => {
             </div>
             <div className="flex items-center gap-4">
                 <span className="text-black text-2xl font-semibold">${totalPrice}</span>
-                <Link to={`/my-orders/${key}`}>
+                <Link to={`/e-commerce/my-orders/${key}`}>
                     <ChevronRightIcon className="text-black w-10 h-10" onClick={() => setNewKey(key)}/>
                 </Link>
             </div>

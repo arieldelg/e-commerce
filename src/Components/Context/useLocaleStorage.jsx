@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect } from "react";
-import { dataContext } from ".";
 
 const useLocalStorage = (initialName, initialValue) => {
     const [itemAccount, setItemAccount] = React.useState(initialValue)
