@@ -7,7 +7,6 @@ import { ProductDetail } from '../../Components/Modal/ProductDetail';
 const Home = () => {
     const { openPortal, setSearchValue, searchValue, search } = React.useContext(dataContext)
     
-    
     return(
         <>
             <h1 className="py-4 text-4xl">Exclusives Items</h1>
